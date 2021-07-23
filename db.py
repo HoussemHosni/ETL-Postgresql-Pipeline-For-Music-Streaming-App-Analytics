@@ -2,6 +2,16 @@ from configparser import ConfigParser
 
 
 def get_db(filename, section):
+    """
+    Description: This function is responsible for returning the database studentdb
+    after parsing the config file database.ini
+    
+    Keyword arguments:
+        filename      -- the configuration file of the database studentdb
+        section     -- The section in the config file which is Postgresql
+    Returns:
+        db -- a dictionary of the studentdb
+    """
     parser = ConfigParser()
     parser.read(filename)
     db = {}

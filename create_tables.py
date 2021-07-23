@@ -4,6 +4,16 @@ from db import get_db
 
 
 def create_database(db, name):
+    """
+    Description: This function is responsible for creating the Sparkify database
+    
+    Keyword arguments:
+        db  -- studentdb database returned after parsing the database.ini config file
+        name -- name of the database to create
+    Returns:
+        conn -- connection to the database created
+        cur -- cursor
+    """
     
     conn = psycopg2.connect(host=db["host"],
                             database=db["database"],
@@ -22,13 +32,32 @@ def create_database(db, name):
     return conn, cur
     
 def drop_tables(conn, cur):
+    """
+    Description: This function is responsible for Dropping all the tables in the 
+    Sparkify database
+    
+    Keyword arguments:
+        conn -- connection to the database Sparkify
+        cur -- cursor
+    Returns:
+        None
+    """
     
     for drop_query in drop_table_queries:
         cur.execute(drop_query)
         conn.commit()
         
 def create_tables(conn, cur):
+    """
+    Description: This function is responsible for Creating all the tables in the 
+    Sparkify database
     
+    Keyword arguments:
+        conn -- connection to the database Sparkify
+        cur -- cursor
+    Returns:
+        None
+    """
     for create_query in create_table_queries:
         cur.execute(create_query)
         conn.commit()
