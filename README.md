@@ -65,7 +65,7 @@ ORDER BY Frequency DESC LIMIT 10;
 ```
 - Results :
 <pre>
-user_id	    first_name	    last_name	level	frequency  
+user_id	    first_name	    last_name	    level	    frequency  
 49	    Chloe	    Cuevas	    paid	689  
 80	    Tegan	    Levine	    paid	665  
 97	    Kate	    Harrell	    paid	557  
