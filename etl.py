@@ -15,6 +15,16 @@ def get_files(filepath):
 
 
 def process_song_data(conn, cur, filepath):
+    """
+    Description: This function is responsible for reading the songs metadata JSON files
+    and populating The artists and songs tables with the right data according to their
+    columns
+    Keyword arguments:
+        cur      -- cursor
+        filepath -- folder where data is stored   
+    Returns:
+        None
+    """
     
     all_song_files = get_files(filepath)
     dfs = []
@@ -33,6 +43,18 @@ def process_song_data(conn, cur, filepath):
 
 
 def process_log_data(conn, cur, filepath):
+    
+    """
+    Description: This function is responsible for reading the user activity logs JSON files
+    and populating The time, users and song_plays tables with the right data according to their
+    columns
+    Keyword arguments:
+        cur      -- cursor
+        filepath -- folder where data is stored   
+    Returns:
+        None
+    """
+
     all_logs_files = get_files(filepath)
     dfs = []
     for log_file_path in all_logs_files:
@@ -58,7 +80,7 @@ def process_log_data(conn, cur, filepath):
         else:
             song_id, artist_id = None, None
             
-        song_play_data = (index, pd.to_datetime(row.ts,unit='ms'), int(row.userId), row.level, song_id, artist_id, row.sessionId, row.location, row.userAgent)
+        song_play_data = (pd.to_datetime(row.ts,unit='ms'), int(row.userId), row.level, song_id, artist_id, row.sessionId, row.location, row.userAgent)
         cur.execute(songplay_table_insert, song_play_data)
         conn.commit()
 
