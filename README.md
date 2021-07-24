@@ -65,7 +65,7 @@ ORDER BY Frequency DESC LIMIT 10;
 ```
 - Results :
 <pre>
-user_id	    first_name	last_name	level	frequency  
+user_id	    first_name	    last_name	level	frequency  
 49	    Chloe	    Cuevas	    paid	689  
 80	    Tegan	    Levine	    paid	665  
 97	    Kate	    Harrell	    paid	557  
@@ -74,7 +74,7 @@ user_id	    first_name	last_name	level	frequency
 29	    Jacqueline	    Lynch	    free	346  
 24	    Layla	    Griffin	    paid	321  
 73	    Jacob	    Klein	    paid	289  
-88	    Mohammad	    Rodriguez	free	270  
+88	    Mohammad	    Rodriguez	    free	270  
 36	    Matthew	    Jones	    paid	248  
 </pre>
 ## Project Structure
