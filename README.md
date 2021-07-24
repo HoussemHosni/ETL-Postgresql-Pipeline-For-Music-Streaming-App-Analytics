@@ -13,7 +13,11 @@ The goal is to create a Postgres database schema for a particular analytic focus
 >> - Sparkify can analyze the songs that users are frequently listening to in order to personalize their recommendations of new tracks for each of its users.
 
 ## :heavy_check_mark: Data Modeling
-The PostgreSQL database was modeled according to a Star schema, with the songplays table at its center. The schema is normalized, and the songplays table references the songs and artists tables filled with songs Metadata informations, as well as the users and time tables containing insights on users and detailed timestamps of song plays. The different tables are listed below:
+The PostgreSQL database was modeled according to a Star schema, with the songplays table at its center. The schema is normalized, and the songplays table references the songs and artists tables filled with songs Metadata informations, as well as the users and time tables containing insights on users and detailed timestamps of song plays. The data Model is depicted in the diagram below:
+
+![image info](./db_schema.png)
+
+The different tables are listed below:
 ### songplays : Fact Table
 `songplay_id, start_time, user_id, level, song_id, artist_id, session_id, location, user_agent`
 
