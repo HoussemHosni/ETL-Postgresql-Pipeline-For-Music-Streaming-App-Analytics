@@ -15,7 +15,7 @@ The goal is to create a Postgres database schema for a particular analytic focus
 ## :heavy_check_mark: Data Modeling
 The PostgreSQL database was modeled according to a Star schema, with the songplays table at its center. The schema is normalized, and the songplays table references the songs and artists tables filled with songs Metadata informations, as well as the users and time tables containing insights on users and detailed timestamps of song plays. The data Model is depicted in the diagram below:
 
-![image info](./db_schema.png)
+![image info](./sparkifydb_erd.png)
 
 The different tables are listed below:
 ### songplays : Fact Table
